@@ -4,10 +4,10 @@ import { SocialLinks } from "../components/SocialLinks"
 
 export const Home = () => {
     return (
-        <div>
+        <main>
             <About />
             <YoutubeVideo id="bU7Ue4xF3YI" />
             <SocialLinks />
-        </div>
+        </main>
     )
 }
