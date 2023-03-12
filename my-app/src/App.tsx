@@ -1,5 +1,3 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Home } from './screens/Home';
 import { Ressources } from './screens/Ressources';
@@ -14,7 +12,7 @@ function App() {
         <nav className='flex justify-between'>
           <NavLink className='mr-3' style={({isActive}) => ({fontWeight: isActive ? "bold": "normal"})} to="/"> Acceuil </NavLink> <br />
           <NavLink className="mr-3" style={({isActive}) => ({fontWeight: isActive ? "bold": "normal"})} to="/ressources"> Ressources </NavLink> <br />
-          <NavLink className="mr-3" style={({isActive}) => ({fontWeight: isActive ? "bold": "normal"})} to="/contacts"> Acceuil </NavLink> <br />
+          <NavLink className="mr-3" style={({isActive}) => ({fontWeight: isActive ? "bold": "normal"})} to="/contacts"> Contacts </NavLink> <br />
         </nav>
       </header>
 
