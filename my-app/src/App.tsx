@@ -8,12 +8,13 @@ import { Routes, Route, NavLink } from 'react-router-dom'
 
 function App() {
   return (
-    <div>
-      <header>
-        <nav>
-          <NavLink to="/"> Acceuil </NavLink> <br />
-          <NavLink to="/ressources"> Ressources </NavLink> <br />
-          <NavLink to="/contacts"> Acceuil </NavLink> <br />
+    <div className='container mt-10'>
+      <header className='flex justify-between items-center mb-5'>
+        <img className="w-10" src="images/logo.png" alt="logo" />
+        <nav className='flex justify-between'>
+          <NavLink className='mr-3' style={({isActive}) => ({fontWeight: isActive ? "bold": "normal"})} to="/"> Acceuil </NavLink> <br />
+          <NavLink className="mr-3" style={({isActive}) => ({fontWeight: isActive ? "bold": "normal"})} to="/ressources"> Ressources </NavLink> <br />
+          <NavLink className="mr-3" style={({isActive}) => ({fontWeight: isActive ? "bold": "normal"})} to="/contacts"> Acceuil </NavLink> <br />
         </nav>
       </header>
 
