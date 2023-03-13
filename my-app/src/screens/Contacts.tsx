@@ -1,4 +1,5 @@
 import { useForm, SubmitHandler } from "react-hook-form"
+import emailjs from "@emailjs/browser"
 
 type FormInputs = {
     subject: string,
@@ -10,7 +11,16 @@ export const Contacts = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm<FormInputs>()
     const onSubmit: SubmitHandler<FormInputs> = data => {
-        console.log(data)
+        emailjs.send(
+            "service_v3t3mom",
+            "template_hnqz2md",
+            {
+                subject: data.subject,
+                email: data.email,
+                message: data.message
+            },
+            "NB7HdcMddHibzkIet"
+        )
     }
 
     return (
@@ -29,7 +39,7 @@ export const Contacts = () => {
                     <label className="block" htmlFor="email">Email</label>
                     <input {...register("email"), { required: true }} className="border" type="email" name="email" id="email" placeholder="votre email" />
                 </div>
-                    {errors.email && <p className="texct-[red]">Email requis</p>}
+                {errors.email && <p className="texct-[red]">Email requis</p>}
 
                 <div>
                     <label className="block" htmlFor="message">Sujet du mail</label>
